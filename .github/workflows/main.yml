@@ -1,7 +1,7 @@
 name: CI
 on: push
 env:
-  env_var: ${{ vars.REPO_VAR }
+  env_var: ${{ vars.REPO_VAR }}
 jobs:
   test:
     runs-on: ubuntu-latest

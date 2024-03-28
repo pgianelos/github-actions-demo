@@ -1,13 +1,12 @@
-name: CI
-on: [push, workflow_dispatch]
-env:
-  env_var: ${{ vars.REPO_VAR }}
-jobs:
-  test:
-    env:
-      env_var: “This is a job var” 
-    runs-on: ubuntu-latest
-    steps:
-    - run: echo ${{ env.env_var }}
-      env: 
-        env_var: “This is a step var”
+name: CI 
+on: 
+  push: 
+    branches: ['main'] 
+  workflow_dispatch: {} 
+jobs: 
+  checkout-test: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Checkout repository 
+        uses: actions/checkout@v4 
+      - run: ls -la
